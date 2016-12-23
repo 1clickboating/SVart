@@ -27,13 +27,15 @@
 <div id="map" ></div> 
 
   <script type="text/javascript">
-
-        var locations = [
-                [37.3577081,-122.0285023,"Carol Donegan - Ghost in Silicon Valley, 1980","http://historicimages.insunnyvale.org/cdm/singleitem/collection/sunnyvale/id/809/rec/8"],
-                [37.371014,-122.1075671,"Gene Flores - El Paso de los Suenos, 1985", "http://historicimages.insunnyvale.org/cdm/singleitem/collection/sunnyvale/id/816/rec/13"],
-                [37.3629387,-122.0293735,"David Middlebrook - Untitled, 1998","http://historicimages.insunnyvale.org/cdm/singleitem/collection/sunnyvale/id/906/rec/102"],
-                [37.4008785,-122.0320188,"David Middlebrook - Brain, 1999","http://historicimages.insunnyvale.org/cdm/singleitem/collection/sunnyvale/id/907/rec/103"]
-        ];
+  
+  //var myImg = 'http://maps.google.com/mapfiles/ms/micons/blue-dot.png';
+  var myImg = './blue-dot.png';
+  var locations = [
+   [37.3577081,-122.0285023,"Carol Donegan - Ghost in Silicon Valley, 1980","http://historicimages.insunnyvale.org/cdm/singleitem/collection/sunnyvale/id/809/rec/8"],
+   [37.371014,-122.1075671,"Gene Flores - El Paso de los Suenos, 1985", "http://historicimages.insunnyvale.org/cdm/singleitem/collection/sunnyvale/id/816/rec/13"],
+   [37.3629387,-122.0293735,"David Middlebrook - Untitled, 1998","http://historicimages.insunnyvale.org/cdm/singleitem/collection/sunnyvale/id/906/rec/102"],
+   [37.4008785,-122.0320188,"David Middlebrook - Brain, 1999","http://historicimages.insunnyvale.org/cdm/singleitem/collection/sunnyvale/id/907/rec/103"]
+  ];
 
 
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -42,6 +44,44 @@
       gestureHandling: 'cooperative',
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
+
+    var infoWindowGeo = new google.maps.InfoWindow({map: map});
+
+        // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+/*
+            infoWindowGeo.setPosition(pos);
+            infoWindowGeo.setContent('Location found.');
+*/
+            var myLatLng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+            var userMarker = new google.maps.Marker({
+              position: myLatLng,
+              map: map,
+              icon: myImg ,
+              title: "Current location"
+            });
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindowGeo, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindowGeo, map.getCenter());
+        }
+  
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+    }  
 
     var infowindow = new google.maps.InfoWindow();
 
@@ -52,7 +92,7 @@
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[i][0], locations[i][1]),
         map: map,
-	title: locations[i][2]
+	      title: locations[i][2]
       });
 
 
