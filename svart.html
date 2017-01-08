@@ -3,7 +3,8 @@
 <head> 
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
   <title>Sunnyvale Arts</title> 
-  <script src="http://maps.google.com/maps/api/js?key=AIzaSyCW-Ihq2oiCzDYz9ofAFS2H_xmGvew618c&callback=initMap" 
+  <script type="text/javascript" src="svart_all.json"></script>
+  <script src="https://maps.google.com/maps/api/js?key=AIzaSyCW-Ihq2oiCzDYz9ofAFS2H_xmGvew618c&callback=initMap" 
           type="text/javascript"></script>
 
     <style>
@@ -30,6 +31,7 @@
   
   //var myImg = 'http://maps.google.com/mapfiles/ms/micons/blue-dot.png';
   var myImg = './blue-dot.png';
+  /*
   var locations = [
    [37.3577081,-122.0285023,"Carol Donegan - Ghost in Silicon Valley, 1980","http://historicimages.insunnyvale.org/cdm/singleitem/collection/sunnyvale/id/809/rec/8"],
    [37.371014,-122.1075671,"Gene Flores - El Paso de los Suenos, 1985", "http://historicimages.insunnyvale.org/cdm/singleitem/collection/sunnyvale/id/816/rec/13"],
@@ -37,7 +39,7 @@
    [37.4008785,-122.0320188,"David Middlebrook - Brain, 1999","http://historicimages.insunnyvale.org/cdm/singleitem/collection/sunnyvale/id/907/rec/103"]
   ];
 
-
+var locations = JSON.parse (t);*/
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 12,
       center: new google.maps.LatLng(37.3577081, -122.0285023),
