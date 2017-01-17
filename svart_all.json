@@ -68,7 +68,7 @@ var locations = [
 [37.40365,-122.031625,"Guy Dill - Key Angel, 2005","http://historicimages.insunnyvale.org/cdm/ref/collection/sunnyvale/id/873"],
 [37.402872,-122.033546,"Guy Dill - Watermark, 2005","http://historicimages.insunnyvale.org/cdm/ref/collection/sunnyvale/id/874"],
 [37.412476,-122.018452,"Guy Dill - Hayden, 2008","http://historicimages.insunnyvale.org/cdm/ref/collection/sunnyvale/id/875"],
-[37.364839,-122.028844,"Scott Donahue - The Way It Was, 2006","http://historicimages.insunnyvale.org/cdm/ref/collection/sunnyvale/id/876"],
+[37.368929,-122.037206,"Scott Donahue - The Way It Was, 2006","http://historicimages.insunnyvale.org/cdm/ref/collection/sunnyvale/id/876"],
 [37.372078,-121.986073,"Dan Dykes - Untitled, 2000","http://historicimages.insunnyvale.org/cdm/ref/collection/sunnyvale/id/877"],
 [37.410779,-122.025852,"Dennis Gallagher - Untitled, 2002","http://historicimages.insunnyvale.org/cdm/ref/collection/sunnyvale/id/878"],
 [37.352847,-122.005671,"Naved Ghedami - Living, 1992","http://historicimages.insunnyvale.org/cdm/ref/collection/sunnyvale/id/879"],
@@ -111,4 +111,4 @@ var locations = [
 [37.370875,-121.995473,"Tony Sheets - Untitled, 1992","http://historicimages.insunnyvale.org/cdm/ref/collection/sunnyvale/id/916"],
 [37.357777,-122.020023,"Dan Snyder - Untitled, 1992","http://historicimages.insunnyvale.org/cdm/ref/collection/sunnyvale/id/917"],
 [37.384697,-122.009388,"Christoph Spath - Red Disc, 2002","http://historicimages.insunnyvale.org/cdm/ref/collection/sunnyvale/id/918"]
-];
+]
