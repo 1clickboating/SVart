@@ -100,11 +100,12 @@ var locations = JSON.parse (t);*/
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-/*
-          infowindow.setContent(locations[i][2]);
-      content = '<a href="' + locations[i][3] + '" target="_blank"> YAHOO </a>';
-*/
-      content = '<h3><a href="' + locations[i][3] + '" target="_blank"> ' + locations[i][2] + ' </a></h3>';
+        	/*var str = '<div align="right"> <h4> <a href= "https://www.google.com/maps?saddr=My+Location&daddr="' + locations[i][0] + ',' +  locations[i][1] + '" target="_blank"> Direction </a></h4>  </div>';
+        	echo str;
+        	*/
+
+      content = '<h3><a href="' + locations[i][3] + '" target="_blank"> ' + locations[i][2] + ' </a></h3>' + '<div align="right"> <h4> <a href= "https://www.google.com/maps?saddr=My+Location&daddr=' + locations[i][0] + ',' +  locations[i][1] + '"" target="_blank"> Directions </a></h4>  </div>';
+      /*<h4> <a href= https://www.google.com/maps?saddr=My+Location&daddr=' + locations[i][0] +',' locations[i][1] + '" target="_blank"> Direction </a></h4> </div>'  ; */
           infowindow.setContent(content);
           infowindow.open(map, marker);
         }
